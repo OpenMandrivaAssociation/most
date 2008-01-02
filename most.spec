@@ -10,6 +10,7 @@ License:	GPL
 URL:		ftp://space.mit.edu/pub/davis/%{name}
 Group:		File tools
 Source:		%{URL}/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	libslang-devel chrpath
 Requires:	slang
 
