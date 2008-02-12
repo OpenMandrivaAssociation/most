@@ -15,7 +15,6 @@ BuildRequires:	libslang-devel chrpath
 Requires:	slang
 
 %description
-
 most is a paging program that displays, one windowful  at  a  time,  the
 contents of a file on a terminal. It pauses  after  each  windowful  and
 prints on the window status line the screen the file name, current  line
