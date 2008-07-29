@@ -1,6 +1,6 @@
 %define name    most
 %define version 4.10.2
-%define release %mkrel 3
+%define release %mkrel 5
 
 Summary:	More, less, most
 Name:		%{name}
