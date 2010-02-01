@@ -1,6 +1,6 @@
-%define name    most
-%define version 5.0.0a
-%define release %mkrel 3
+%define name	most
+%define version	5.0.0a
+%define release	%mkrel 4
 
 Summary:	More, less, most
 Name:		%{name}
@@ -31,7 +31,7 @@ chrpath -d src/objs/most
 %install
 %__rm -rf %{buildroot}
 %__install -D -m0755 src/objs/most %{buildroot}%{_bindir}/most
-%__install -D -m0644 most.1        %{buildroot}%{_mandir}/man1/most.1
+%__install -D -m0644 most.1	%{buildroot}%{_mandir}/man1/most.1
 
 %clean
 %__rm -rf %{buildroot}
