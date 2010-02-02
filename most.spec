@@ -2,7 +2,7 @@
 %define version	5.0.0a
 %define release	%mkrel 4
 
-Summary:	More, less, most
+Summary:	A powerful paging program
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
