@@ -1,6 +1,6 @@
 %define name	most
 %define version	5.0.0a
-%define release	%mkrel 4
+%define release	%mkrel 5
 
 Summary:	A powerful paging program
 Name:		%{name}
