@@ -1,17 +1,14 @@
-%define name	most
-%define version	5.0.0a
-%define release	%mkrel 5
-
 Summary:	A powerful paging program
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		  most
+Version:	5.2.0
+Release:	1
 License:	GPLv2
-URL:		ftp://space.mit.edu/pub/davis/%{name}
 Group:		File tools
-Source:		%{URL}/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	libslang-devel chrpath
+URL:		  https://www.jedsoft.org/releases/most/
+Source0:		https://www.jedsoft.org/releases/most/%{name}-%{version}.tar.gz
+
+BuildRequires:	pkgconfig(slang)
+BuildRequires:	chrpath
 Requires:	slang
 
 %description
@@ -23,22 +20,23 @@ shown.
 %prep
 %setup -q
 
+# do not strip binaries
+sed -i 's|\$(INSTALL) -s|\$(INSTALL)|' src/Makefile.in
+
 %build
-%configure
-%make
+%configure \
+	--with-slanglib=%{_libdir} \
+	--with-slanginc=%{_includedir}/slang
+%__make
+
 chrpath -d src/objs/most
 
 %install
-%__rm -rf %{buildroot}
-%__install -D -m0755 src/objs/most %{buildroot}%{_bindir}/most
-%__install -D -m0644 most.1	%{buildroot}%{_mandir}/man1/most.1
-
-%clean
-%__rm -rf %{buildroot}
+%make_install
 
 %files
-%defattr (-,root,root)
-%doc COPYRIGHT COPYING README changes.txt most.doc most-fun.txt lesskeys.rc most.rc
+%license COPYRIGHT COPYING
+%{_docdir}/%{name}/
 %{_bindir}/most
 %{_mandir}/man1/most.1*
 
