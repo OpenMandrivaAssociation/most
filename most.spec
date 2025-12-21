@@ -7,6 +7,11 @@ Group:		File tools
 URL:		  https://www.jedsoft.org/releases/most/
 Source0:		https://www.jedsoft.org/releases/most/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(slang)
 BuildRequires:	chrpath
 Requires:	slang
